@@ -69,29 +69,29 @@ public class BattleCatsGame extends Application{
         // enemies.add(dogeTank);
         
         //Spawn Buttons - Eric
-        Button spawnNormalCat = new Button("Spawn Normal Cat - $75");
+        Button spawnNormalCat = new Button("Normal Cat - $75");
         spawnNormalCat.setLayoutX(300);
         spawnNormalCat.setLayoutY(100);
         
-        Button spawnTankCat = new Button("Spawn Tank Cat - $100");
-        spawnTankCat.setLayoutX(150);
+        Button spawnTankCat = new Button("Tank Cat - $100");
+        spawnTankCat.setLayoutX(160);
         spawnTankCat.setLayoutY(100);
         
-        Button spawnGodCat = new Button("Spawn God Cat - $2000");
+        Button spawnGodCat = new Button("God Cat - $2000");
         spawnGodCat.setLayoutX(20);
         spawnGodCat.setLayoutY(100);
         
         Button spawnDoge = new Button("Spawn Doge");
         spawnDoge.setLayoutX(300);
-        spawnDoge.setLayoutY(200);
+        spawnDoge.setLayoutY(150);
         
         Button spawnSnache = new Button("Spawn Snache");
-        spawnSnache.setLayoutX(150);
-        spawnSnache.setLayoutY(200);
+        spawnSnache.setLayoutX(170);
+        spawnSnache.setLayoutY(150);
         
         Button spawnDogeTank = new Button("Spawn Doge Tank");
-        spawnDogeTank.setLayoutX(5);
-        spawnDogeTank.setLayoutY(200);
+        spawnDogeTank.setLayoutX(20);
+        spawnDogeTank.setLayoutY(150);
         
 
         //Defines layers for which image is in front of the other.
@@ -136,7 +136,7 @@ public class BattleCatsGame extends Application{
       spawnGodCat.setOnAction(e ->{
         if(money[0] >= 2000){
            money[0] -= 2000;
-            Cat newCat2 = new Cat("God.png", 250, 3, 1.23, 4, 140, 400, 260, 1.2);
+            Cat newCat2 = new Cat("God.png", 1000, 500, 1.23, 4, 140, 400, 260, 1.2);
             cats.add(newCat2);
             root.getChildren().add(newCat2.getSprite());
             moneyLabel.setText("Money: $" + money[0]);
@@ -164,7 +164,7 @@ public class BattleCatsGame extends Application{
 
     // 20 seconds for Doge tank - Eric
     new KeyFrame(Duration.seconds(20), e -> {
-        Enemy boss = new Enemy("Doge_Tank.png", 500, 100, 6, 3, 110, 0, 260, 1.2);
+        Enemy boss = new Enemy("Doge_Tank.png", 500, 300, 6, 3, 110, 0, 260, 1.2);
         enemies.add(boss);
         root.getChildren().add(boss.getSprite());
     })
