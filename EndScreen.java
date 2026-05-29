@@ -13,13 +13,12 @@ public class EndScreen{
      * Creates end Screen based on whether you lose or win, 
      * displays victory and defeat screen
      * Added button for replay and quit
-     * @Author Jason Arluck
+     * @Author Jason
      * @Precon Stage is a valid stage, not blank or null
      * @Precon won must be true or false
      * @return Scene object that will create a new scene for the endscreen, prompting the buttons for replay orr quit.
      */
     public static Scene showEndScreen(Stage stage, boolean won) {
-        
         Image backgroundImage = new Image(EndScreen.class.getResourceAsStream(won ? "VictoryScreen.png" : "defeatscreen.jpg"));
         ImageView bg = new ImageView(backgroundImage);
         bg.setFitWidth(500);
@@ -34,12 +33,8 @@ public class EndScreen{
         StackPane root = new StackPane(bg, buttons);
         //sets up an action when you press the button. Replay will take you back to the main menu.
         replay.setOnAction(e -> {
-            try {
                 MainMenu menu = new MainMenu();
                 menu.start(stage);
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
         });
         //Quit will exit the program
         quit.setOnAction(e -> stage.close());
